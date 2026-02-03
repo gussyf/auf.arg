@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ACCESS TERMINAL</title>
+  <style>
+    body { background:black; color:lime; font-family:monospace; text-align:center; padding-top:100px; }
+    #download { display:none; margin-top:30px; }
+  </style>
+</head>
+<body>
+
+<h1>ENTER ACCESS CODE</h1>
+
+<input type="text" id="code"><br><br>
+<button onclick="checkCode()">SUBMIT</button>
+
+<p id="msg"></p>
+
+<div id="download">
+  <a href="secret-file.pdf" download>DOWNLOAD FILE</a>
+</div>
+
+<script>
+function checkCode() {
+  const correctCode = "ECHO-1974"; // replace with your ARG code
+  const input = document.getElementById("code").value;
+
+  if (input === correctCode) {
+    document.getElementById("download").style.display = "block";
+    document.getElementById("msg").innerText = "ACCESS GRANTED";
+  } else {
+    document.getElementById("msg").innerText = "ACCESS DENIED";
+  }
+}
+</script>
+
+</body>
+</html>
